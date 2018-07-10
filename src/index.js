@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import './index.css';
-import ButtonSetup from './components/ButtonSetup';
+import ButtonSetup from './components/ButtonSetup/ButtonSetup';
 import DefaultLayout from './layouts/DefaultLayout';
 
 ReactDOM.render(

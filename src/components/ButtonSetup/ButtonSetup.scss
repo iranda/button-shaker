@@ -1,0 +1,22 @@
+.button-setup-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button-setup-container >h2 {
+  width: 100%;
+}
+
+.button-setup-container >span {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.button-setup-container .button-settings-block {
+  flex: 7;
+}
+
+.button-setup-container .button-preview-block {
+  flex: 3;
+}
