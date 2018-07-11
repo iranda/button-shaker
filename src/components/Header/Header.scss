@@ -1,0 +1,37 @@
+@import '../../scss/colors.scss';
+
+.header {
+  background-color: $blueberry;
+  color: white;
+  display: flex;
+  padding: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .app-name {
+    font-size: 1.5rem;
+  }
+
+  .customer-block {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .customer-icon {
+      align-self: center;
+      height: 35px;
+      width: 35px;
+    }
+
+    .customer-data {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .customer-name {
+        font-size: 13px;
+      }
+    }
+  }
+}

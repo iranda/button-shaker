@@ -43,7 +43,6 @@ class ButtonSetup extends Component {
     return (
       <div className='button-setup-container'>
         <h1>
-          Button-shaker
           <Toggle
             defaultChecked={this.state.pluginTurnedOn}
             onChange={this.pluginOnChange} />
@@ -81,6 +80,8 @@ class ButtonSetup extends Component {
               )
             }
           </div>
+
+          <button>Save changes<span role='img' aria-label=''>💾</span></button>
         </div>
         
         <div className="button-preview-block">
