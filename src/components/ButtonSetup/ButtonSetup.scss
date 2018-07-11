@@ -11,6 +11,16 @@
     align-items: center;
   }
 
+  button {
+    border-radius: 5px;
+    padding: 12px 10px;
+    background-color: #4D648D;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
   .button-settings-block {
     flex: 7;
 
