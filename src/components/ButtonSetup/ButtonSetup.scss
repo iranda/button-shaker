@@ -1,22 +1,74 @@
+@import '../scss/animations.scss';
+
 .button-setup-container {
   display: flex;
   flex-wrap: wrap;
+
+  >h1 {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .button-settings-block {
+    flex: 7;
+  }
+
+  .button-preview-block {
+    flex: 3;
+  }
 }
 
-.button-setup-container >h2 {
-  width: 100%;
-}
+.button-preview-block {
+  .pulse {
+    @include animate(pulse, 0.6s, infinite, alternate);
+  }
 
-.button-setup-container >span {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-}
+  .pulse-grow {
+    @include animate(pulse-grow, 0.6s, infinite, alternate);
+  }
 
-.button-setup-container .button-settings-block {
-  flex: 7;
-}
+  .pulse-shrink {
+    @include animate(pulse-shrink, 0.6s, infinite, alternate);
+  }
 
-.button-setup-container .button-preview-block {
-  flex: 3;
+  .rotate {
+    @include animate(rotate, 0.6s, infinite, alternate);
+  }
+
+  .rotate-right {
+    @include animate(rotate-right, 0.6s, infinite, alternate);
+  }
+
+  .rotate-left {
+    @include animate(rotate-left, 0.6s, infinite, alternate);
+  }
+
+  .bounce {
+    @include animate(bounce, 0.6s, infinite, alternate);
+  }
+
+  .bounce-top {
+    @include animate(bounce-top, 0.6s, infinite, alternate);
+  }
+
+  .bounce-bottom {
+    @include animate(bounce-bottom, 0.6s, infinite, alternate);
+  }
+
+  .buzz {
+    @include animate(buzz, 0.15s, infinite, alternate);
+  }
+
+  .skew {
+    @include animate(skew, 0.5s, infinite, alternate);
+  }
+
+  .skew-right {
+    @include animate(skew-right, 0.3s, infinite, alternate);
+  }
+
+  .skew-left {
+    @include animate(skew-left, 0.3s, infinite, alternate);
+  }
 }

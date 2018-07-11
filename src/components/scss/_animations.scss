@@ -1,0 +1,112 @@
+@import 'mixins.scss';
+
+@include keyframes(pulse) {
+  from {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@include keyframes(pulse-grow) {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@include keyframes(pulse-shrink) {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@include keyframes(rotate) {
+  from {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  to {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+}
+
+@include keyframes(rotate-right) {
+  to {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+}
+
+@include keyframes(rotate-left) {
+  to {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+}
+
+@include keyframes(bounce) {
+  from {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  to {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+}
+
+@include keyframes(bounce-top) {
+  to {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@include keyframes(bounce-bottom) {
+  to {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+
+@include keyframes(buzz) {
+  50% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+}
+
+@include keyframes(skew) {
+  from {
+    -webkit-transform: skew(10deg);
+    transform: skew(10deg);
+  }
+  to {
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
+  }
+}
+
+@include keyframes(skew-right) {
+  to {
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
+  }
+}
+
+@include keyframes(skew-left) {
+  to {
+    -webkit-transform: skew(10deg);
+    transform: skew(10deg);
+  }
+}
