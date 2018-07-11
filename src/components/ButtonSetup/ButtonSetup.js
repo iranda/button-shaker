@@ -12,11 +12,13 @@ class ButtonSetup extends Component {
 
     this.state = {
       pluginTurnedOn: true,
-      selectedAnimation: '',
+      selectedAnimation: ANIMATION_LIST[0].id,
+      selectedAnimationFrequency: ANIMATION_FREQUENCY[0].id,
     };
 
     this.pluginOnChange = this.pluginOnChange.bind(this);
-    this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.handleAnimationChange = this.handleAnimationChange.bind(this);
+    this.handleFrequencyChange = this.handleFrequencyChange.bind(this);
   }
 
   pluginOnChange() {
@@ -25,9 +27,15 @@ class ButtonSetup extends Component {
     });
   }
 
-  handleOptionChange(itemId) {
+  handleAnimationChange(animationId) {
     this.setState({
-      selectedAnimation: itemId,
+      selectedAnimation: animationId,
+    });
+  }
+
+  handleFrequencyChange(frequecyId) {
+    this.setState({
+      selectedAnimationFrequency: frequecyId,
     });
   }
 
@@ -51,7 +59,7 @@ class ButtonSetup extends Component {
                 <div
                   key={idx}
                   className={`settings-item${this.state.selectedAnimation === animation.id ? ' selected' : ''}`}
-                  onClick={() => {this.handleOptionChange(animation.id)}}
+                  onClick={() => {this.handleAnimationChange(animation.id)}}
                 >
                   {animation.label}
                 </div>
@@ -65,7 +73,8 @@ class ButtonSetup extends Component {
               ANIMATION_FREQUENCY.map((animation, idx) =>
                 <div
                   key={idx}
-                  className={`settings-item`}
+                  className={`settings-item${this.state.selectedAnimationFrequency === animation.id ? ' selected' : ''}`}
+                  onClick={() => {this.handleFrequencyChange(animation.id)}}
                 >
                   {animation.label}
                 </div>
