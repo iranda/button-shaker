@@ -1,65 +1,10 @@
 import React, { Component } from 'react';
 import Toggle from 'react-toggle';
+import {
+  ANIMATION_LIST,
+  ANIMATION_FREQUENCY,
+} from '../../constants';
 import './ButtonSetup.css';
-
-const ANIMATION_LIST = [
-  {
-    id: '',
-    label: 'No animation',
-  },
-  {
-    id: 'pulse',
-    label: 'Pulse',
-  },
-  {
-    id: 'pulse-grow',
-    label: 'Pulse Grow',
-  },
-  {
-    id: 'pulse-shrink',
-    label: 'Pulse Shrink',
-  },
-  {
-    id: 'rotate',
-    label: 'Rotate',
-  },
-  {
-    id: 'rotate-right',
-    label: 'Rotate Right',
-  },
-  {
-    id: 'rotate-left',
-    label: 'Rotate Left',
-  },
-  {
-    id: 'bounce',
-    label: 'Bounce',
-  },
-  {
-    id: 'bounce-top',
-    label: 'Bounce Top',
-  },
-  {
-    id: 'bounce-bottom',
-    label: 'Bounce Bottom',
-  },
-  {
-    id: 'buzz',
-    label: 'Buzz',
-  },
-  {
-    id: 'skew',
-    label: 'Skew',
-  },
-  {
-    id: 'skew-right',
-    label: 'Skew right',
-  },
-  {
-    id: 'skew-left',
-    label: 'Skew left',
-  },
-];
 
 class ButtonSetup extends Component {
   constructor(props) {
@@ -80,49 +25,58 @@ class ButtonSetup extends Component {
     });
   }
 
-  handleOptionChange(event) {
+  handleOptionChange(itemId) {
     this.setState({
-      selectedAnimation: event.target.id,
+      selectedAnimation: itemId,
     });
   }
 
   render() {
     return (
-      <div className="button-setup-container">
+      <div className='button-setup-container'>
         <h1>
-          <span role="img" aria-label="">🦄</span> Button-shaker
+          Button-shaker
           <Toggle
             defaultChecked={this.state.pluginTurnedOn}
             onChange={this.pluginOnChange} />
         </h1>
         
-        <div className="button-settings-block">
+        <div className='button-settings-block'>
           <h2>Settings</h2>
 
           <h3>Animation</h3>
-          {
-            ANIMATION_LIST.map((animation, idx) =>
-              <div key={idx}>
-                <input
-                  type='radio'
-                  name='animation-type'
-                  id={animation.id}
-                  onChange={this.handleOptionChange}
-                />
-                <label>{animation.label}</label>
-              </div>
-            )
-          }
+          <div className='settings-items-container'>
+            {
+              ANIMATION_LIST.map((animation, idx) =>
+                <div
+                  key={idx}
+                  className={`settings-item${this.state.selectedAnimation === animation.id ? ' selected' : ''}`}
+                  onClick={() => {this.handleOptionChange(animation.id)}}
+                >
+                  {animation.label}
+                </div>
+              )
+            }
+          </div>
 
           <h3>Animate</h3>
-            <input type='radio' name='animation-frequency'/> On hover
-            <input type='radio' name='animation-frequency'/> Every X seconds
-            <input type='radio' name='animation-frequency'/> Once on load
+          <div className='settings-items-container'>
+            {
+              ANIMATION_FREQUENCY.map((animation, idx) =>
+                <div
+                  key={idx}
+                  className={`settings-item`}
+                >
+                  {animation.label}
+                </div>
+              )
+            }
+          </div>
         </div>
         
         <div className="button-preview-block">
           <h2>Preview</h2>
-          <button className={this.state.selectedAnimation}>ADD TO CART</button>
+          <button className={`preview-button ${this.state.selectedAnimation}`}>ADD TO CART</button>
         </div>
       </div>
     );

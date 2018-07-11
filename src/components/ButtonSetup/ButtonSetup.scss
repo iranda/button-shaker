@@ -1,4 +1,5 @@
-@import '../scss/animations.scss';
+@import '../../scss/animations.scss';
+@import '../../scss/colors.scss';
 
 .button-setup-container {
   display: flex;
@@ -12,10 +13,50 @@
 
   .button-settings-block {
     flex: 7;
+
+    h3 {
+      color: $blueberry;
+    }
+
+    .settings-items-container {
+      -ms-box-orient: horizontal;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      .settings-item {
+        width: 125px;
+        cursor: pointer;
+        margin: 10px 10px 0 0;
+        padding: 15px 10px;
+        border: 1px solid #D0E1F9;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.selected {
+          border-bottom: solid 3px $blueberry;
+        }
+      }
+    }
   }
 
   .button-preview-block {
     flex: 3;
+
+    .preview-button {
+      background-color: $blueberry;
+      color: white;
+      font-family: "Work Sans","HelveticaNeue","Helvetica Neue",sans-serif;
+      height: 44px;
+      width: 343px;
+    }
   }
 }
 
